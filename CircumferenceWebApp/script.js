@@ -47,10 +47,14 @@ function onButtonClick() {
 			// Radius
 			document.getElementById("rText").innerHTML = "Question : " + value + " Radius" + " = ? Circumference" + "<br>";  
 		    result = 2 * Math.PI * value;
-		} else {
+		} else if (type === "dia") {
 			// Diameter
 			document.getElementById("rText").innerHTML = "Question : " + value + " Diameter" + " = ? Circumference" + "<br>"; 
-		    result = 2 * Math.PI * (value/2);
+		    result = 2 * Math.PI * (value / 2);
+		} else {
+			// Area
+			document.getElementById("rText").innerHTML = "Question : " + value + " Area" + " = ? Circumference" + "<br>"; 
+			result = Math.sqrt(value / Math.PI) * (Math.PI * Math.PI);
 		}
 		// Display Result
 		document.getElementById("rText").innerHTML += "Result : " + result;  
@@ -75,7 +79,7 @@ window.onbeforeunload = function () {
 
 // Display Version
 var d = new Date();
-document.getElementById("version").innerHTML = "<strong>Version 1.0.2019521.73401.LM</strong><br>© " + d.getFullYear() + " KingKingGreat";
+document.getElementById("version").innerHTML = "<strong>Version 1.0.2019521.22401.LM</strong><br>© " + d.getFullYear() + " KingKingGreat";
 
 // Fade in page
 fade = window.setInterval(function() {animate("body", true)}, 100);
